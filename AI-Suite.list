@@ -1,5 +1,6 @@
 # AI Suite for Loon
 # Published: 2026-10-27
+# Revision: 2026-10-27-community-1
 # User-supplied baseline, not an exhaustive or fully reverified allowlist.
 # Bind subscription policy to IPRoyal-Chain in Loon.
 # Shared hosts also route unrelated services through that policy.
@@ -216,9 +217,16 @@ DOMAIN-SUFFIX,kiro.dev
 DOMAIN,q.eu-central-1.amazonaws.com
 DOMAIN,q.us-east-1.amazonaws.com
 
-# > Meta AI / Muse (baseline; verify product association)
+# > Meta AI / Muse — expanded community coverage (2026-10-27)
+# Includes shared Meta/Facebook/Instagram traffic; owner approved broader coverage.
 DOMAIN-SUFFIX,meta.ai
 DOMAIN-SUFFIX,muse.ai
+DOMAIN-SUFFIX,metaaivm.com
+DOMAIN-SUFFIX,metaaiusercontent.com
+DOMAIN-SUFFIX,meta.com
+DOMAIN-SUFFIX,facebook.com
+DOMAIN-SUFFIX,fbcdn.net
+DOMAIN-SUFFIX,cdninstagram.com
 
 # > Microsoft Copilot
 DOMAIN-SUFFIX,copilot.cloud.microsoft
@@ -292,3 +300,66 @@ IP-CIDR,52.143.181.161/32,no-resolve
 IP-CIDR,68.155.152.41/32,no-resolve
 IP-CIDR,72.146.20.246/32,no-resolve
 IP-CIDR,74.248.148.7/32,no-resolve
+
+# > Community expansion — candidates, not all runtime dependencies confirmed
+# Sources: SOURCES.md; broader shared routing approved by owner.
+
+# > ChatGPT Voice community candidates
+DOMAIN-SUFFIX,chatgpt.livekit.cloud
+DOMAIN-SUFFIX,host.livekit.cloud
+DOMAIN-SUFFIX,turn.livekit.cloud
+
+# > Claude community candidates
+DOMAIN-SUFFIX,claude.dev
+DOMAIN-SUFFIX,claude.site
+DOMAIN-SUFFIX,claudemcpclient.com
+DOMAIN-SUFFIX,claudemcpcontent.com
+DOMAIN,servd-anthropic-website.b-cdn.net
+
+# > Google AI community candidates
+DOMAIN,antigravity-pa.googleapis.com
+DOMAIN,antigravity.googleapis.com
+DOMAIN,cloudaicompanion.googleapis.com
+DOMAIN,gemini.gstatic.com
+DOMAIN,geminiweb-pa.clients.google.com
+DOMAIN,geminiweb-pa.clients6.google.com
+DOMAIN,notebooklm-pa.googleapis.com
+DOMAIN,notebooklm.googleapis.com
+DOMAIN,webchannel-alkalimakersuite-pa.clients6.google.com
+DOMAIN,content-firebaseappcheck.googleapis.com
+DOMAIN,firebaseappcheck.googleapis.com
+DOMAIN,identitytoolkit.googleapis.com
+DOMAIN,securetoken.googleapis.com
+DOMAIN,www.googleapis.com
+DOMAIN,www.gstatic.com
+DOMAIN-SUFFIX,antigravity-unleash.goog
+
+# > GitHub Copilot community candidates
+DOMAIN,copilot-telemetry-service.githubusercontent.com
+DOMAIN,copilot-workspace.githubnext.com
+DOMAIN,github.githubassets.com
+DOMAIN,avatars.githubusercontent.com
+DOMAIN,collector.github.com
+DOMAIN,api.mcp.github.com
+
+# > Perplexity community candidates
+DOMAIN,pplx-res.cloudinary.com
+DOMAIN,ppl-ai-file-upload.s3.amazonaws.com
+DOMAIN-SUFFIX,perplexity.com
+
+# > JetBrains AI community candidates
+DOMAIN-SUFFIX,grazie.ai
+
+# > Microsoft Copilot community candidates
+DOMAIN,sydney.bing.com
+DOMAIN,www.bing.com
+
+# > Grok community candidates
+DOMAIN,grok.x.com
+DOMAIN-SUFFIX,grok-sandbox.com
+DOMAIN-SUFFIX,groksupport.com
+DOMAIN-SUFFIX,groktpcontent.com
+
+# > Windsurf community candidates
+DOMAIN-SUFFIX,windsurf.ai
+DOMAIN-SUFFIX,windsurf.build
