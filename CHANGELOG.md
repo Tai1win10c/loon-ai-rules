@@ -1,5 +1,16 @@
 # 变更记录
 
+## 2026-10-27 — community-1
+
+- 版本标记：2026-10-27-community-1。有效规则由 193 增至 241，新增 48 条；原有规则未删除。
+- Muse 补入 metaaivm.com、metaaiusercontent.com、meta.com、facebook.com、fbcdn.net、cdninstagram.com；auth.meta.com 由 meta.com 后缀覆盖。
+- 同步扩充 ChatGPT Voice、Claude、Google AI/NotebookLM/Antigravity、GitHub Copilot、Perplexity、JetBrains、Microsoft Copilot、Grok、Windsurf 的社区候选域名。
+- 用户已明确授权覆盖优先，允许基于 GitHub、Reddit 和开发者用户分享收录候选，不限官方文档；用途未完全确认的条目标注社区候选。
+- 共享域名会影响 Facebook、Instagram、Google、Bing、GitHub 等非 AI 请求。本轮按用户授权纳入；来源与置信度见 SOURCES.md。
+- 每周任务已修改：检查全部已收录 AI，主动检索 GitHub 源码/规则/提交/Issues/PR、Reddit、开发者分享。
+- 原始订阅地址保持不变。客户端更新后可搜索版本标记和 metaaivm.com 验证同步。
+- 发布后回读检查规则数量、重复、语法形态和正文一致性；未替用户设备验证实际拉取。
+
 ## 2026-10-27 — 首次发布
 
 - 将用户提供的 AI Suite 基线整理为 AI-Suite.list；按服务分组，不在文件内写死代理策略。
