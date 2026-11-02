@@ -2,7 +2,9 @@
 
 面向个人固定出口分流的 AI 服务远程规则集。首次发布：2026-10-27。
 
-当前版本：**2026-10-27-community-1**。有效规则 **241 条**（新增 48 条）；详见 CHANGELOG.md。
+当前版本：**2026-11-02-non-cn-1**。有效规则 **239 条**（本轮移除 6 条、补充 4 条）；详见 CHANGELOG.md。
+
+范围：排除中国来源 AI，已移除 TRAE 及按项目来源口径移除的 Dify。Dify 有美国运营主体，此处按项目起源分类，不等同于公司注册地判断；来源说明见 SOURCES.md。
 
 ## 添加到 Loon
 
@@ -30,6 +32,7 @@ Loon 官方订阅规则说明：https://nsloon.app/docs/Rule/sub_rule/
 
 已在 ChatGPT 创建独立检查任务：每周二上午（Asia/Singapore，UTC+8），首次安排在 2026-11-03。它不是 GitHub Actions，也不意味着所有接口都能由程序自动发现。
 
+- 排除中国来源 AI，不从社区聚合清单重新加入 TRAE、Dify 等已移除项目；共享基础设施不按此整域删除。
 - 对全部已收录 AI 服务查询官方文档、GitHub 规则/源码/Issues/PR/提交、Reddit 和开发者用户公开分享；用户日志仅作为补充。
 - 覆盖优先：有可追溯社区依据的候选可直接更新，无须等待官方确认；注明证据等级、共享影响和用途置信度。
 - 用户已授权 Muse 的 Meta/Facebook/Instagram 共享依赖及其他 AI 的合理社区依赖；同类有据新增直接更新。可能破坏功能的删除或无边界全球 CDN 扩张仍需确认。
@@ -52,11 +55,13 @@ ChatGPT Voice IP 暂为用户提供的快照：本次官方 JSON 抓取失败，
 手动更新 Loon 中该远程规则订阅，查看已下载规则是否包含：
 
 ```text
-# Revision: 2026-10-27-community-1
+# Revision: 2026-11-02-non-cn-1
 DOMAIN-SUFFIX,metaaivm.com
 DOMAIN-SUFFIX,metaaiusercontent.com
 ```
 
-若界面隐藏注释，搜索新增域名即可。当前文本含 241 条有效规则，注释不计入；客户端显示数量可能因处理方式不同而不同，以新增域名为准。原始地址保持不变，无须换 URL。
+若界面隐藏注释，搜索新增域名即可。当前文本含 239 条有效规则，注释不计入；客户端显示数量可能因处理方式不同而不同，以新增域名为准。原始地址保持不变，无须换 URL。
 
 本版已纳入 meta.com、facebook.com、fbcdn.net、cdninstagram.com 等共享域名，相关非 AI 流量也会命中 IPRoyal-Chain。社区候选的实际必需性与全功能覆盖置信度为 **6/10（待实测）**；这与“文件已发布并可下载”的验证是两回事。
+
+本轮同步确认：搜索新增的 `claude.app`，并确认已无 `dify.ai`、`udify.app`、`trae.ai` 和 `traeapi.us` 规则。移除仅影响此 AI 远程规则集，不会自动阻断这些服务，也不保证其在本地其他规则中不再走代理。
