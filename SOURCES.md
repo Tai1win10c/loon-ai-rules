@@ -97,3 +97,26 @@ AI-Suite.list 以用户提供的现用规则为基线。首次发布没有逐个
 对照现有所有服务分组与上述社区清单，并读取 [Cursor 网络文档](https://cursor.com/docs/enterprise/network-configuration)、[Copilot 允许列表](https://docs.github.com/en/copilot/reference/copilot-allowlist-reference)、Claude Desktop 官方要求；未逐平台抓取运行时请求。api.githubcopilot.com 已被 githubcopilot.com 覆盖；business.gemini.google 已被 gemini.google 覆盖；windsurf-telemetry.codeium.com 已被 codeium.com 覆盖，故不重复添加。
 
 本轮搜索 GitHub 与 Reddit 新线索，Reddit 未返回足够具体的新域名证据；[LiveKit 防火墙文档](https://docs.livekit.io/deploy/admin/firewall/) 确认媒体主机形态，但不单独证明 ChatGPT 必需，不增加整个 livekit.cloud。OpenAI https://openai.com/chatgpt-voice.json 再次因抓取工具不支持返回内容类型失败，保留现有地址而不宣称已核验最新。
+
+## 2026-11-02 — Anthropic-Shared.list
+
+版本：2026-11-02-anthropic-shared-1，独立可选的 12 条精确 DOMAIN 规则，与主文件一起使用，不复制核心后缀。
+
+来源：[Claude Code 网络配置](https://code.claude.com/docs/en/network-config) 的 Network access requirements / Third-party hosts for artifact fonts and libraries，以及 [Desktop 网络要求](https://code.claude.com/docs/en/desktop#network-access-requirements)。正文已读取，未仅依赖搜索摘要。
+
+| 主机 | 官方列出的使用情境 |
+| --- | --- |
+| cdnjs.cloudflare.com、cdn.jsdelivr.net、cdn.tailwindcss.com、code.jquery.com、unpkg.com | Artifacts 加载 JS 库；由具体 Artifact 内容决定是否请求 |
+| http-intake.logs.us5.datadoghq.com | 可选操作遥测 |
+| browser-intake-us5-datadoghq.com | 可选错误报告，受功能启用条件限制 |
+| storage.googleapis.com | 插件安装计数/元数据及旧版原生安装更新 |
+| registry.npmjs.org | npm 插件、依赖、npx MCP、npm/bun 安装 |
+| github.com | 插件/marketplace 克隆 |
+| raw.githubusercontent.com | 发行说明/启动时变更记录 |
+| formulae.brew.sh | Homebrew 安装的更新版本检查 |
+
+官方文档要求的是按功能可访问，并未要求所有共享主机同出口。对于组织 IP 允许列表，官方明确提到 bridge.claudeusercontent.com 应与 claude.ai、api.anthropic.com 同出口；这些已由主文件覆盖。本次补充的同出口必要性是用户偏好，不能作为官方要求陈述。
+
+未重复添加已在主文件的 fonts.googleapis.com、fonts.gstatic.com。未将整个 githubusercontent.com、googleapis.com、cloudflare.com 加入。googlesource 的动态检出主机、自选插件 URL、外部 MCP/账号认证及云端服务出站不作全量覆盖保证。
+
+证据置信度 9/10（官方文档主机与用途）；**6/10（待实测）**：该用户的具体使用中是否请求每个共享主机、是否需固定出口，以及全链路完整性。精确主机被其他程序使用时同样会走其绑定策略；共享文件停用不影响核心后缀规则。
