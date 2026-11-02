@@ -25,6 +25,7 @@ Loon 官方订阅规则说明：https://nsloon.app/docs/Rule/sub_rule/
 | 文件 | 用途 |
 | --- | --- |
 | [AI-Suite.list](AI-Suite.list) | 可订阅规则，基于用户现用清单 |
+| [Anthropic-Shared.list](Anthropic-Shared.list) | Anthropic 共享依赖补充（可选，精确主机） |
 | [SOURCES.md](SOURCES.md) | 来源、核验状态和维护判据 |
 | [CHANGELOG.md](CHANGELOG.md) | 每次变更原因与验证情况 |
 
@@ -65,3 +66,25 @@ DOMAIN-SUFFIX,metaaiusercontent.com
 本版已纳入 meta.com、facebook.com、fbcdn.net、cdninstagram.com 等共享域名，相关非 AI 流量也会命中 IPRoyal-Chain。社区候选的实际必需性与全功能覆盖置信度为 **6/10（待实测）**；这与“文件已发布并可下载”的验证是两回事。
 
 本轮同步确认：搜索新增的 `claude.app`，并确认已无 `dify.ai`、`udify.app`、`trae.ai` 和 `traeapi.us` 规则。移除仅影响此 AI 远程规则集，不会自动阻断这些服务，也不保证其在本地其他规则中不再走代理。
+
+## Anthropic 共享依赖补充
+
+核心域名已在 AI-Suite.list 中。本次新增独立补充文件 **Anthropic-Shared.list**，版本 **2026-11-02-anthropic-shared-1**，共 **12 条精确 DOMAIN 规则**；主文件仍为 239 条。该文件不独立替代主文件。
+
+如需将这些共享请求也统一出口，在 Loon 中另加远程规则地址，并与主文件都绑定到同一个 IPRoyal-Chain 策略：
+
+https://raw.githubusercontent.com/Tai1win10c/loon-ai-rules/main/Anthropic-Shared.list
+
+把此补充订阅放在可能抢先匹配这些主机的远程规则之前，并检查更高优先级本地规则；下载成功不等于实际命中，需看 Loon 请求详情。可搜索 cdn.jsdelivr.net 和 http-intake.logs.us5.datadoghq.com 确认下载内容。
+
+### 是否必须统一所有请求出口
+
+核心认证/API/内容连接一致最值得优先保证，现已覆盖官方列出的 Anthropic 核心主机。官方对启用组织 IP 允许列表的场景明确强调 bridge.claudeusercontent.com 与核心 API 同出口。公共字体、脚本 CDN、插件下载和遥测则不等于都被要求同出口；本次是根据用户偏好扩大覆盖，不作必需性承诺。
+
+补充文件的 12 个主机分为 Artifacts JS 库、可选遥测、CLI 插件/安装/发行说明/更新主机。fonts.googleapis.com 和 fonts.gstatic.com 已在主文件，无须重复。
+
+域名分流无法区分发起应用：github.com、raw.githubusercontent.com、registry.npmjs.org、storage.googleapis.com、cdnjs.cloudflare.com 等主机上的非 Claude 流量也会命中补充策略，可能包含大文件下载。精确 DOMAIN 不覆盖所有子域，也不会强制所有全球 CDN 走固定出口。仅启用主文件仍可保持核心 Anthropic 域名固定出口；补充文件可随时单独停用。
+
+插件自选地址、第三方 MCP、外部 OAuth、用户输入的网址及特定 googlesource Gerrit 检出等仍可能产生额外请求；此补充不保证任意用法全链路同出口，也不约束 Anthropic 云端服务器自己发起的网络请求。无需为此修改手机证书或开启 HTTPS 解密。
+
+来源：[Claude Code 官方网络要求](https://code.claude.com/docs/en/network-config)、[Desktop 官方网络要求](https://code.claude.com/docs/en/desktop)。
