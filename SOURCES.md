@@ -71,3 +71,29 @@ AI-Suite.list 以用户提供的现用规则为基线。首次发布没有逐个
 每周检查全部已收录 AI 服务，必须主动检索 GitHub 规则/源码/提交/Issues/PR、Reddit 及开发者用户分享。Reddit 原帖能作为用户实测证据，但不将未经核实的故障归因写成事实。
 
 本轮搜索到 [Gemini macOS 登录排查](https://www.reddit.com/r/GeminiAI/comments/1xemr7z/anyone_else_locked_out_of_the_gemini_mac_app/) 中提及 robinfrontend-pa.googleapis.com（本轮仅搜索返回的帖文摘录，未读全部评论；该域名原已覆盖），未据此添加新域名。其他 Reddit 检索本轮未带来足够明确的新域名。
+
+## 2026-11-02 — non-cn-1 范围与更新核查
+
+排除中国来源 AI；不按创始人姓名或族裔判断。不收录 TRAE、Dify，也不自动引入 DeepSeek、Qwen、豆包、Kimi、智谱、MiniMax 等。共享 Google、Microsoft、CDN 域名不因被中国服务使用而整体移除。
+
+### 本次移除
+
+- TRAE 项目来源：[ByteDance 官方 trae-agent](https://github.com/bytedance/trae-agent)。移除 trae.ai、traeapi.us 及两个 trae-api-*.mchost.guru 精确主机，不删除整个 mchost.guru。
+- Dify 来源存在口径差异：[LangGenius 官方 GitHub 简介](https://github.com/langgenius) 表明项目由前腾讯云 DevOps 团队成员创建；[当前官方服务条款](https://www.dify.ai/legal/terms-of-service) 表示从美国加州运营。本次按用户“来自中国”的项目来源口径移除 dify.ai、udify.app，不据此将其称为中国注册公司。将 Dify 纳入排除范围是本次执行假设，置信度 **6/10（口径待用户校准）**。
+
+### 本次补充
+
+| 规则 | 证据 | 状态 |
+| --- | --- | --- |
+| DOMAIN-SUFFIX,claude.app | [Claude Desktop 官方网络要求](https://code.claude.com/docs/en/desktop#network-access-requirements) 明列 claude.app 和其子域，包含 livepreview | 9/10；补齐现有遗漏 |
+| DOMAIN-SUFFIX,augment.dev | 最新 viewer12/OverseasAI.list | 社区候选，实际依赖用途 6/10 |
+| DOMAIN,copilotprodattachments.blob.core.windows.net | 最新 viewer12/OverseasAI.list | 社区候选，实际依赖用途 6/10 |
+| DOMAIN-SUFFIX,copilot-stg.com | 最新 viewer12/OverseasAI.list | 社区候选，可能涉及测试环境；实际依赖用途 6/10 |
+
+社区文件：[OverseasAI.list](https://github.com/viewer12/OverseasAI.list/blob/main/rule/Surge/OverseasAI/OverseasAI.list)，读取时 blob SHA 82ce74e39f1c62cdd786f63a20faa4dd21b33e5e；最近提交 [0bf767ab](https://github.com/viewer12/OverseasAI.list/commit/0bf767abf300fe236bbd486dfcc1d9a9f3de431d)。这不证明上述域名都是最近才上线，也不能把聚合仓库视为独立多源核实。
+
+### 检查范围与限制
+
+对照现有所有服务分组与上述社区清单，并读取 [Cursor 网络文档](https://cursor.com/docs/enterprise/network-configuration)、[Copilot 允许列表](https://docs.github.com/en/copilot/reference/copilot-allowlist-reference)、Claude Desktop 官方要求；未逐平台抓取运行时请求。api.githubcopilot.com 已被 githubcopilot.com 覆盖；business.gemini.google 已被 gemini.google 覆盖；windsurf-telemetry.codeium.com 已被 codeium.com 覆盖，故不重复添加。
+
+本轮搜索 GitHub 与 Reddit 新线索，Reddit 未返回足够具体的新域名证据；[LiveKit 防火墙文档](https://docs.livekit.io/deploy/admin/firewall/) 确认媒体主机形态，但不单独证明 ChatGPT 必需，不增加整个 livekit.cloud。OpenAI https://openai.com/chatgpt-voice.json 再次因抓取工具不支持返回内容类型失败，保留现有地址而不宣称已核验最新。
