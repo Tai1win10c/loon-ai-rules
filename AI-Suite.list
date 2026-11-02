@@ -1,6 +1,7 @@
 # AI Suite for Loon
 # Published: 2026-10-27
-# Revision: 2026-10-27-community-1
+# Revision: 2026-11-02-non-cn-1
+# Scope: exclude China-origin AI products, including TRAE and Dify (origin-based).
 # User-supplied baseline, not an exhaustive or fully reverified allowlist.
 # Bind subscription policy to IPRoyal-Chain in Loon.
 # Shared hosts also route unrelated services through that policy.
@@ -85,10 +86,6 @@ DOMAIN,accounts.spacex.ai
 # > DIA
 DOMAIN-SUFFIX,diabrowser.com
 DOMAIN-SUFFIX,diabrowser.engineering
-
-# > Dify.AI
-DOMAIN-SUFFIX,dify.ai
-DOMAIN-SUFFIX,udify.app
 
 # > GitHub Copilot
 DOMAIN,copilot-proxy.githubusercontent.com
@@ -253,12 +250,6 @@ DOMAIN-SUFFIX,pplx.ai
 # > Sora
 DOMAIN-SUFFIX,sora.com
 
-# > TRAE International
-DOMAIN-SUFFIX,trae.ai
-DOMAIN-SUFFIX,traeapi.us
-DOMAIN,trae-api-sg.mchost.guru
-DOMAIN,trae-api-us.mchost.guru
-
 # > Windsurf
 DOMAIN-SUFFIX,codeium.com
 DOMAIN-SUFFIX,codeiumdata.com
@@ -363,3 +354,10 @@ DOMAIN-SUFFIX,groktpcontent.com
 # > Windsurf community candidates
 DOMAIN-SUFFIX,windsurf.ai
 DOMAIN-SUFFIX,windsurf.build
+
+# > 2026-11-02 review — official Claude desktop and community coverage
+# Sources: SOURCES.md; community entries are candidates.
+DOMAIN-SUFFIX,claude.app
+DOMAIN-SUFFIX,augment.dev
+DOMAIN,copilotprodattachments.blob.core.windows.net
+DOMAIN-SUFFIX,copilot-stg.com
