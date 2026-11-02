@@ -1,5 +1,17 @@
 # 变更记录
 
+## 2026-11-02 — non-cn-1
+
+- 版本：2026-11-02-non-cn-1。以已发布的 241 条为基线，移除 6 条、补充 4 条，现为 239 条。
+- 移除 TRAE：trae.ai、traeapi.us、trae-api-sg.mchost.guru、trae-api-us.mchost.guru。
+- 按项目来源口径移除 Dify：dify.ai、udify.app。Dify 有美国运营主体；此移除不表示其注册地为中国，来源歧义见 SOURCES.md。
+- 新增 claude.app（Claude 官方桌面网络文档）、augment.dev、copilotprodattachments.blob.core.windows.net、copilot-stg.com（最新社区清单）。后面三项是补齐当前遗漏，不宣称为最近新上线接口。
+- 核查 viewer12 社区聚合最新文件、其最近提交、Claude/Cursor/Copilot 官方网络文档，并搜索 Reddit 线索；未给所有服务逐项实测。
+- Google 的 business.gemini.google、Windsurf 的 windsurf-telemetry.codeium.com、api.githubcopilot.com 等已有后缀覆盖，未重复添加。
+- 官方 chatgpt-voice.json 仍因内容类型未能读取，保留旧快照并标明待复核。
+- 每周维护任务加入排除中国来源 AI 的范围限制；共享服务不会仅因同时被中国服务使用就整体移除。
+- 仅修改 loon-ai-rules，原始订阅地址不变。
+
 ## 2026-10-27 — community-1
 
 - 版本标记：2026-10-27-community-1。有效规则由 193 增至 241，新增 48 条；原有规则未删除。
