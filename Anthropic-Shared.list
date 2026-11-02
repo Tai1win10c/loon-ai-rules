@@ -1,0 +1,27 @@
+# Anthropic Shared Dependencies for Loon
+# Revision: 2026-11-02-anthropic-shared-1
+# Supplement to AI-Suite.list; bind both subscriptions to the same policy in Loon.
+# Official access requirements do NOT mean identical egress is mandatory.
+# Exact shared hosts also affect unrelated apps; no credentials or user IPs included.
+# Sources:
+# https://code.claude.com/docs/en/network-config
+# https://code.claude.com/docs/en/desktop
+
+# > Artifacts JavaScript libraries
+DOMAIN,cdnjs.cloudflare.com
+DOMAIN,cdn.jsdelivr.net
+DOMAIN,cdn.tailwindcss.com
+DOMAIN,code.jquery.com
+DOMAIN,unpkg.com
+
+# > Optional Claude Code operational telemetry
+DOMAIN,http-intake.logs.us5.datadoghq.com
+DOMAIN,browser-intake-us5-datadoghq.com
+
+# > Claude Code plugins, installers, release notes and update checks
+# Shared hosts can carry large downloads and unrelated development traffic.
+DOMAIN,storage.googleapis.com
+DOMAIN,registry.npmjs.org
+DOMAIN,github.com
+DOMAIN,raw.githubusercontent.com
+DOMAIN,formulae.brew.sh
