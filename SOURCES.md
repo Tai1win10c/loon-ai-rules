@@ -9,7 +9,7 @@ AI-Suite.list 以用户提供的现用规则为基线。首次发布没有逐个
 - OpenAI 网络允许列表：https://help.openai.com/en/articles/9247338-network-recommendations-for-chatgpt-errors-on-web-and-apps
   - 确认 frontend-apps-multi-region.workos.com，补入精确 DOMAIN 规则。
   - 其余 OpenAI 允许列表多数已被原后缀或精确规则覆盖。
-  - 文档确认语音地址持续变化；https://openai.com/chatgpt-voice.json 本次抓取失败，不能宣称现有 IP 已是最新。
+  - 文档确认语音地址持续变化；[官方 JSON](https://openai.com/chatgpt-voice.json) 于 2026-11-03 成功读取。上游时间戳为 2026-10-27T22:28:21.782457+00:00，含 402 个 IPv4 /32 语音目的地址，较旧快照增加 379 个且无移除。
 - Loon 订阅规则：https://nsloon.app/docs/Rule/sub_rule/
   - 远程规则文件各行使用 Loon 规则语法，策略在订阅端绑定。
 
