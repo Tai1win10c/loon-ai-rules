@@ -1,5 +1,11 @@
 # 变更记录
 
+## 2026-11-03 — ChatGPT Voice 官方地址同步
+
+- AI-Suite.list 更新至 2026-11-03-voice-1，共 618 条。官方语音 IPv4 /32 从 23 条增至 402 条，新增 379 条，移除 0 条。
+- 2026-11-03 成功读取 [OpenAI 官方 JSON](https://openai.com/chatgpt-voice.json)，上游时间为 2026-10-27 UTC。仅同步公开目的地址，UDP 转发需另行验证。
+- Anthropic-Shared.list 仍为独立可选订阅，共 12 条。
+
 ## 2026-11-02 — Anthropic 共享依赖补充
 
 - 新增独立可选 Anthropic-Shared.list，版本 2026-11-02-anthropic-shared-1，12 条精确 DOMAIN 规则。
