@@ -1,5 +1,11 @@
 # 变更记录
 
+## 2026-11-10 — 缩小 Bing 分流范围
+
+- 从主表移除 `DOMAIN,www.bing.com`，避免普通 Bing 搜索命中该条。保留其他 Copilot 条目。
+- `AI-Suite.list` 更新至 `2026-11-10-bing-1`，共 617 条。独立可选的 `Anthropic-Shared.list` 共 12 条。
+- 重新获取 OpenAI 官方语音 JSON，402 条地址与仓库快照一致。
+
 ## 2026-11-03 — ChatGPT Voice 官方地址同步
 
 - AI-Suite.list 更新至 2026-11-03-voice-1，共 618 条。官方语音 IPv4 /32 从 23 条增至 402 条，新增 379 条，移除 0 条。
