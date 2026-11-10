@@ -120,3 +120,8 @@ AI-Suite.list 以用户提供的现用规则为基线。首次发布没有逐个
 未重复添加已在主文件的 fonts.googleapis.com、fonts.gstatic.com。未将整个 githubusercontent.com、googleapis.com、cloudflare.com 加入。googlesource 的动态检出主机、自选插件 URL、外部 MCP/账号认证及云端服务出站不作全量覆盖保证。
 
 证据置信度 9/10（官方文档主机与用途）；**6/10（待实测）**：该用户的具体使用中是否请求每个共享主机、是否需固定出口，以及全链路完整性。精确主机被其他程序使用时同样会走其绑定策略；共享文件停用不影响核心后缀规则。
+
+## 2026-11-10 — Bing 搜索主机与语音快照复核
+
+- 主表移除 `DOMAIN,www.bing.com`。该主机同时承载普通 [Bing 搜索](https://www.bing.com/)，其他 Copilot 条目保留。主表 617 条，独立可选 Anthropic 共享表 12 条。
+- 重新读取 [OpenAI 官方语音 JSON](https://openai.com/chatgpt-voice.json)，上游时间戳为 2026-10-27T22:28:21.782457+00:00，402 个 IPv4 /32 与仓库快照一致。
