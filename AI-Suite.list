@@ -1,6 +1,6 @@
 # AI Suite for Loon
 # Published: 2026-10-27
-# Revision: 2026-11-03-voice-1
+# Revision: 2026-11-10-bing-1
 # Scope: exclude China-origin AI products, including TRAE and Dify (origin-based).
 # User-supplied baseline, not an exhaustive or fully reverified allowlist.
 # Bind subscription policy to IPRoyal-Chain in Loon.
@@ -722,7 +722,6 @@ DOMAIN-SUFFIX,grazie.ai
 
 # > Microsoft Copilot community candidates
 DOMAIN,sydney.bing.com
-DOMAIN,www.bing.com
 
 # > Grok community candidates
 DOMAIN,grok.x.com
