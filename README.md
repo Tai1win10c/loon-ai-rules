@@ -2,7 +2,7 @@
 
 面向个人固定出口分流的 AI 服务远程规则集。首次发布：2026-10-27。
 
-当前版本：**2026-11-03-voice-1**。有效规则 **618 条**（本轮新增 379 条语音地址）；详见 CHANGELOG.md。
+当前版本：**2026-11-10-bing-1**。有效规则 **617 条**（本轮移除普通 Bing 搜索主机）；详见 CHANGELOG.md。
 
 范围：排除中国来源 AI，已移除 TRAE 及按项目来源口径移除的 Dify。Dify 有美国运营主体，此处按项目起源分类，不等同于公司注册地判断；来源说明见 SOURCES.md。
 
@@ -56,12 +56,12 @@ ChatGPT Voice 使用 2026-11-03 成功获取的 OpenAI 官方 JSON 快照，包�
 手动更新 Loon 中该远程规则订阅，查看已下载规则是否包含：
 
 ```text
-# Revision: 2026-11-03-voice-1
+# Revision: 2026-11-10-bing-1
 DOMAIN-SUFFIX,metaaivm.com
 DOMAIN-SUFFIX,metaaiusercontent.com
 ```
 
-若界面隐藏注释，可搜索新增地址 `104.211.223.134`。当前文本含 618 条有效规则，注释不计入；客户端显示数量可能因处理方式不同而不同，可用上述地址核对。原始地址保持不变，无须换 URL。
+若界面隐藏注释，可核对 `DOMAIN,www.bing.com` 已移除。当前文本含 617 条有效规则，注释不计入；客户端显示数量可能因处理方式不同而不同，可用上述规则核对。原始地址保持不变，无须换 URL。
 
 本版已纳入 meta.com、facebook.com、fbcdn.net、cdninstagram.com 等共享域名，相关非 AI 流量也会命中 IPRoyal-Chain。社区候选的实际必需性与全功能覆盖置信度为 **6/10（待实测）**；这与“文件已发布并可下载”的验证是两回事。
 
@@ -69,7 +69,7 @@ DOMAIN-SUFFIX,metaaiusercontent.com
 
 ## Anthropic 共享依赖补充
 
-核心域名已在 AI-Suite.list 中。本次新增独立补充文件 **Anthropic-Shared.list**，版本 **2026-11-02-anthropic-shared-1**，共 **12 条精确 DOMAIN 规则**；主文件仍为 618 条。该文件不独立替代主文件。
+核心域名已在 AI-Suite.list 中。本次新增独立补充文件 **Anthropic-Shared.list**，版本 **2026-11-02-anthropic-shared-1**，共 **12 条精确 DOMAIN 规则**；主文件仍为 617 条。该文件不独立替代主文件。
 
 如需将这些共享请求也统一出口，在 Loon 中另加远程规则地址，并与主文件都绑定到同一个 IPRoyal-Chain 策略：
 
