@@ -1,5 +1,10 @@
 # 变更记录
 
+## 2026-11-11 — 补充 Grok 与 Meta 登录入口
+
+- 新增精确规则 `DOMAIN,x.com`、`DOMAIN,instagram.com`、`DOMAIN,www.instagram.com`。这些主机上的普通网页请求也会命中同一策略。
+- `AI-Suite.list` 更新至 `2026-11-11-login-1`，共 620 条。独立可选的 `Anthropic-Shared.list` 共 12 条。
+
 ## 2026-11-10 — 缩小 Bing 分流范围
 
 - 从主表移除 `DOMAIN,www.bing.com`，避免普通 Bing 搜索命中该条。保留其他 Copilot 条目。
