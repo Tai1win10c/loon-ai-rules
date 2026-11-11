@@ -125,3 +125,9 @@ AI-Suite.list 以用户提供的现用规则为基线。首次发布没有逐个
 
 - 主表移除 `DOMAIN,www.bing.com`。该主机同时承载普通 [Bing 搜索](https://www.bing.com/)，其他 Copilot 条目保留。主表 617 条，独立可选 Anthropic 共享表 12 条。
 - 重新读取 [OpenAI 官方语音 JSON](https://openai.com/chatgpt-voice.json)，上游时间戳为 2026-10-27T22:28:21.782457+00:00，402 个 IPv4 /32 与仓库快照一致。
+
+## 2026-11-11 — Grok 与 Meta 登录入口
+
+- `x.com` 是 X 授权入口。[Grok FAQ](https://docs.x.ai/grok/faq) 说明连接 X 账号会进入 X 单点登录，[X 帮助](https://help.x.com/en/managing-your-account/connect-or-revoke-access-to-third-party-apps) 说明网页授权可能要求在 `x.com` 登录。
+- `instagram.com` 和 `www.instagram.com` 按精确主机匹配，用于覆盖 Instagram 登录入口。[Meta 开发者 FAQ](https://developers.meta.com/vr/faqs/) 说明同一账户中心可以启用跨账号登录。具体客户端是否使用这些入口需通过请求日志确认。
+- 这三个主机也承载普通网页流量。主表 620 条，独立可选的 Anthropic 共享表 12 条。
