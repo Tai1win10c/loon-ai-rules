@@ -2,7 +2,7 @@
 
 面向个人固定出口分流的 AI 服务远程规则集。首次发布：2026-10-27。
 
-当前版本：**2026-11-11-login-1**。有效规则 **620 条**（本轮补充 X 和 Instagram 登录主机）；详见 CHANGELOG.md。
+当前版本：**2026-11-19-endpoints-1**。有效规则 **634 条**（本轮补充 Antigravity、Cursor 和 GitHub Copilot 主机）；详见 CHANGELOG.md。
 
 范围：排除中国来源 AI，已移除 TRAE 及按项目来源口径移除的 Dify。Dify 有美国运营主体，此处按项目起源分类，不等同于公司注册地判断；来源说明见 SOURCES.md。
 
@@ -37,6 +37,7 @@ Loon 官方订阅规则说明：https://nsloon.app/docs/Rule/sub_rule/
 - 对全部已收录 AI 服务查询官方文档、GitHub 规则/源码/Issues/PR/提交、Reddit 和开发者用户公开分享；用户日志仅作为补充。
 - 覆盖优先：有可追溯社区依据的候选可直接更新，无须等待官方确认；注明证据等级、共享影响和用途置信度。
 - 用户已授权 Muse 的 Meta/Facebook/Instagram 共享依赖及其他 AI 的合理社区依赖；同类有据新增直接更新。可能破坏功能的删除或无边界全球 CDN 扩张仍需确认。
+- 将官方网络清单和公开客户端日志的主机，与当前规则按精确域名和后缀覆盖比较。例行检查包含登录、API、文件、WebSocket、语音、遥测和更新。
 - 抓取失败保留现有规则并报告；不把未能核验写成“无变化”。
 - 当前 GitHub 连接器可读，但写入返回权限不足；首次发布使用用户授权的浏览器完成。后续若连接器仍不可写，尝试已授权的浏览器；登录失效则报告阻塞，不承诺无人值守写入。
 - **仅维护 Tai1win10c/loon-ai-rules，禁止修改账号下其他仓库。**
@@ -56,12 +57,12 @@ ChatGPT Voice 使用 2026-11-03 成功获取的 OpenAI 官方 JSON 快照，包�
 手动更新 Loon 中该远程规则订阅，查看已下载规则是否包含：
 
 ```text
-# Revision: 2026-11-11-login-1
+# Revision: 2026-11-19-endpoints-1
 DOMAIN-SUFFIX,metaaivm.com
 DOMAIN-SUFFIX,metaaiusercontent.com
 ```
 
-若界面隐藏注释，可搜索 `DOMAIN,x.com` 与 `DOMAIN,www.instagram.com`。当前文本含 620 条有效规则，注释不计入；客户端显示数量可能因处理方式不同而不同，可用上述规则核对。原始地址保持不变，无须换 URL。
+若界面隐藏注释，可搜索 `DOMAIN,play.googleapis.com`。当前文本含 634 条有效规则，注释不计入；客户端显示数量可能因处理方式不同而不同，可用上述规则核对。原始地址保持不变，无须换 URL。
 
 本版已纳入 meta.com、facebook.com、fbcdn.net、cdninstagram.com 等共享域名，相关非 AI 流量也会命中 IPRoyal-Chain。社区候选的实际必需性与全功能覆盖置信度为 **6/10（待实测）**；这与“文件已发布并可下载”的验证是两回事。
 
@@ -69,7 +70,7 @@ DOMAIN-SUFFIX,metaaiusercontent.com
 
 ## Anthropic 共享依赖补充
 
-核心域名已在 AI-Suite.list 中。本次新增独立补充文件 **Anthropic-Shared.list**，版本 **2026-11-02-anthropic-shared-1**，共 **12 条精确 DOMAIN 规则**；主文件仍为 620 条。该文件不独立替代主文件。
+核心域名已在 AI-Suite.list 中。本次新增独立补充文件 **Anthropic-Shared.list**，版本 **2026-11-02-anthropic-shared-1**，共 **12 条精确 DOMAIN 规则**；主文件仍为 634 条。该文件不独立替代主文件。
 
 如需将这些共享请求也统一出口，在 Loon 中另加远程规则地址，并与主文件都绑定到同一个 IPRoyal-Chain 策略：
 
