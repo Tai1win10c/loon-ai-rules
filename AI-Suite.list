@@ -1,6 +1,6 @@
 # AI Suite for Loon
 # Published: 2026-10-27
-# Revision: 2026-11-11-login-1
+# Revision: 2026-11-19-endpoints-1
 # Scope: exclude China-origin AI products, including TRAE and Dify (origin-based).
 # User-supplied baseline, not an exhaustive or fully reverified allowlist.
 # Bind subscription policy to IPRoyal-Chain in Loon.
@@ -79,6 +79,10 @@ DOMAIN-SUFFIX,cursor.com
 DOMAIN-SUFFIX,cursor.sh
 DOMAIN-SUFFIX,cursorapi.com
 DOMAIN-SUFFIX,cursorvm.com
+# Cursor agent file sync and Windows Remote SSH server download.
+DOMAIN,agent-stores.s3.amazonaws.com
+DOMAIN,agent-stores.s3.us-east-1.amazonaws.com
+DOMAIN,cursor.blob.core.windows.net
 
 # > Cursor shared sign-in
 DOMAIN,accounts.spacex.ai
@@ -94,6 +98,14 @@ DOMAIN,copilot-telemetry.githubusercontent.com
 DOMAIN,default.exp-tas.com
 DOMAIN-SUFFIX,githubcopilot.com
 DOMAIN,origin-tracker.githubusercontent.com
+# GitHub Copilot real-time WebSocket hosts.
+DOMAIN,production-copilot-host.webpubsub.azure.com
+DOMAIN,production-copilot-host-austriaeast.webpubsub.azure.com
+DOMAIN,production-copilot-host-centralus.webpubsub.azure.com
+DOMAIN,production-copilot-host-centralus-02.webpubsub.azure.com
+DOMAIN,production-copilot-host-eastasia.webpubsub.azure.com
+DOMAIN,production-copilot-host-westus.webpubsub.azure.com
+DOMAIN,production-copilot-host-westus3.webpubsub.azure.com
 
 # > GitHub Copilot shared API
 DOMAIN,api.github.com
@@ -113,6 +125,11 @@ DOMAIN-SUFFIX,antigravity.google.com
 DOMAIN,cloudcode-pa.googleapis.com
 DOMAIN,daily-cloudcode-pa.googleapis.com
 DOMAIN,daily-cloudcode-pa.sandbox.googleapis.com
+# Antigravity optional API, update hosts and shared Clearcut logging.
+DOMAIN,aicode.googleapis.com
+DOMAIN,antigravity-cli-auto-updater-974169037036.us-central1.run.app
+DOMAIN,antigravity-hub-auto-updater-974169037036.us-central1.run.app
+DOMAIN,play.googleapis.com
 
 # > Google Antigravity Enterprise / Gemini Enterprise
 DOMAIN,aiplatform.eu.rep.googleapis.com
