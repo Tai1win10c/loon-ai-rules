@@ -131,3 +131,10 @@ AI-Suite.list 以用户提供的现用规则为基线。首次发布没有逐个
 - `x.com` 是 X 授权入口。[Grok FAQ](https://docs.x.ai/grok/faq) 说明连接 X 账号会进入 X 单点登录，[X 帮助](https://help.x.com/en/managing-your-account/connect-or-revoke-access-to-third-party-apps) 说明网页授权可能要求在 `x.com` 登录。
 - `instagram.com` 和 `www.instagram.com` 按精确主机匹配，用于覆盖 Instagram 登录入口。[Meta 开发者 FAQ](https://developers.meta.com/vr/faqs/) 说明同一账户中心可以启用跨账号登录。具体客户端是否使用这些入口需通过请求日志确认。
 - 这三个主机也承载普通网页流量。主表 620 条，独立可选的 Anthropic 共享表 12 条。
+
+## 2026-11-19 — Antigravity、Cursor 和 GitHub Copilot 网络主机
+
+- Antigravity 新增 `play.googleapis.com`、`aicode.googleapis.com` 和两个专用 Cloud Run 更新主机。[Google Cloud 官方部署说明](https://docs.cloud.google.com/docs/security/compliance/deploy-antigravity-us-public-sector#disable_optional_apis) 将它们列为桌面端和 CLI 会调用的可选 API。文档更新于 2026-11-10，2026-11-19 核对。[2026-02-25 的公开桌面日志](https://github.com/lbjlaq/Antigravity-Manager/issues/2115) 将 `play.googleapis.com/log` 标为 Clearcut 上传。该主机由多个 Google 应用共享，精确域名规则也会匹配其他应用访问该主机的流量。官方关联与日志用途置信度 9/10。
+- Cursor 新增两个 `agent-stores.s3` 主机和 `cursor.blob.core.windows.net`。[Cursor 官方网络说明](https://cursor.com/docs/enterprise/network-configuration) 分别列为技能与 Agent 文件同步、Windows Remote SSH 组件下载。组件下载可能由远端机器发起。用途置信度 9/10，2026-11-19 核对。
+- GitHub Copilot 新增官方列出的七个 `production-copilot-host*.webpubsub.azure.com` 精确主机，用于 Copilot on GitHub 的实时事件和更新。[GitHub 官方允许列表](https://docs.github.com/en/copilot/reference/copilot-allowlist-reference)，用途置信度 9/10，2026-11-19 核对。
+- 主表 634 条。独立可选的 Anthropic 共享表 12 条。以上主机是否需固定出口，以及用户设备的实际命中，仍需按使用场景验证（6/10）。
