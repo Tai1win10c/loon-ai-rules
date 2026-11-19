@@ -1,5 +1,11 @@
 # 变更记录
 
+## 2026-11-19 — 补充 Antigravity、Cursor 和 GitHub Copilot 主机
+
+- 新增 14 条精确域名规则，覆盖 Antigravity 的日志、API 和更新主机，Cursor 的 Agent 文件同步和远程组件，以及 GitHub Copilot 的实时 WebSocket。
+- `play.googleapis.com` 为 Google 共享主机，其他应用访问该主机时也会走订阅绑定的策略。来源与用途见 SOURCES.md。
+- `AI-Suite.list` 更新至 `2026-11-19-endpoints-1`，共 634 条。独立可选的 `Anthropic-Shared.list` 共 12 条。
+
 ## 2026-11-11 — 补充 Grok 与 Meta 登录入口
 
 - 新增精确规则 `DOMAIN,x.com`、`DOMAIN,instagram.com`、`DOMAIN,www.instagram.com`。这些主机上的普通网页请求也会命中同一策略。
