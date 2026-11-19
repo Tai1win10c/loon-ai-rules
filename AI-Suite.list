@@ -1,6 +1,6 @@
 # AI Suite for Loon
 # Published: 2026-10-27
-# Revision: 2026-11-19-endpoints-1
+# Revision: 2026-11-19-netcoffee-1
 # Scope: exclude China-origin AI products, including TRAE and Dify (origin-based).
 # User-supplied baseline, not an exhaustive or fully reverified allowlist.
 # Bind subscription policy to IPRoyal-Chain in Loon.
@@ -29,10 +29,14 @@ DOMAIN-SUFFIX,oaistatic.com
 DOMAIN-SUFFIX,oaistatsig.com
 DOMAIN-SUFFIX,oaiusercontent.com
 DOMAIN-SUFFIX,openai.com
+DOMAIN,crixet.com
 
 # > ChatGPT API & CDN (baseline; recheck endpoints)
 DOMAIN,cdn.openaimerge.com
 DOMAIN,chat.openai.com.cdn.cloudflare.net
+DOMAIN,openai.com.cdn.cloudflare.net
+DOMAIN,openaiassets.blob.core.windows.net
+DOMAIN,openaicom.imgix.net
 DOMAIN,openaiapi-site.azureedge.net
 DOMAIN,openaicom-api-bdcpf8c6d2e9atf6.z01.azurefd.net
 DOMAIN,openaicomproductionae4b.blob.core.windows.net
@@ -40,6 +44,9 @@ DOMAIN,production-openaicom-storage.azureedge.net
 
 # > ChatGPT shared dependencies — also affect non-AI traffic
 DOMAIN,cdn.workos.com
+DOMAIN,browser-intake-datadoghq.com
+DOMAIN,client-api.arkoselabs.com
+DOMAIN,openai-api.arkoselabs.com
 DOMAIN,challenges.cloudflare.com
 DOMAIN-SUFFIX,ct.sendgrid.net
 DOMAIN,forwarder.workos.com
@@ -51,9 +58,15 @@ DOMAIN-SUFFIX,intercomcdn.com
 DOMAIN,js.stripe.com
 DOMAIN,o207216.ingest.sentry.io
 DOMAIN,o33249.ingest.sentry.io
+DOMAIN,o33249.ingest.us.sentry.io
 DOMAIN,rum.browser-intake-datadoghq.com
 DOMAIN,setup.workos.com
 DOMAIN,workos.imgix.net
+
+# > ChatGPT Web PubSub — community-reported historical hosts
+DOMAIN,chatgpt-async-webps-prod-eastus-17.webpubsub.azure.com
+DOMAIN,chatgpt-async-webps-prod-eastus-18.webpubsub.azure.com
+DOMAIN,chatgpt-async-webps-prod-eastus-23.webpubsub.azure.com
 
 # > Chorus
 DOMAIN-SUFFIX,chorus.sh
@@ -64,6 +77,11 @@ DOMAIN-SUFFIX,clau.de
 DOMAIN-SUFFIX,claude.ai
 DOMAIN-SUFFIX,claude.com
 DOMAIN-SUFFIX,claudeusercontent.com
+
+# > Claude community candidates — service-specific third-party hosts
+DOMAIN,anthropic.auth0.com
+DOMAIN,anthropic-com.ghost.io
+DOMAIN,anthropic.com.cdn.cloudflare.net
 
 # > Cloudflare AI Gateway
 DOMAIN,gateway.ai.cloudflare.com
@@ -284,9 +302,15 @@ DOMAIN-SUFFIX,grokipedia.com
 DOMAIN-SUFFIX,grokusercontent.com
 DOMAIN-SUFFIX,x.ai
 
+# > Anthropic API and Console — official inbound destination networks
+# Source: https://platform.claude.com/docs/en/api/ip-addresses
+IP-CIDR,153.61.224.0/22,no-resolve
+IP-CIDR,160.79.104.0/23,no-resolve
+IP-CIDR6,2607:6bc0::/48,no-resolve
+
 # > ChatGPT Voice — official destination IPs
 # Source: https://openai.com/chatgpt-voice.json
-# Official snapshot dated 2026-10-27 UTC, retrieved 2026-11-03.
+# Official snapshot dated 2026-11-16 UTC, retrieved 2026-11-19.
 # UDP forwarding support must be verified separately.
 IP-CIDR,102.37.57.54/32,no-resolve
 IP-CIDR,104.211.223.134/32,no-resolve
@@ -411,6 +435,8 @@ IP-CIDR,20.171.97.109/32,no-resolve
 IP-CIDR,20.184.36.134/32,no-resolve
 IP-CIDR,20.190.104.59/32,no-resolve
 IP-CIDR,20.193.73.108/32,no-resolve
+IP-CIDR,20.194.216.119/32,no-resolve
+IP-CIDR,20.194.216.186/32,no-resolve
 IP-CIDR,20.194.51.26/32,no-resolve
 IP-CIDR,20.195.180.205/32,no-resolve
 IP-CIDR,20.195.185.53/32,no-resolve
@@ -421,6 +447,7 @@ IP-CIDR,20.197.177.17/32,no-resolve
 IP-CIDR,20.197.179.218/32,no-resolve
 IP-CIDR,20.197.180.156/32,no-resolve
 IP-CIDR,20.197.192.104/32,no-resolve
+IP-CIDR,20.197.26.229/32,no-resolve
 IP-CIDR,20.198.73.88/32,no-resolve
 IP-CIDR,20.199.240.35/32,no-resolve
 IP-CIDR,20.203.136.26/32,no-resolve
@@ -428,6 +455,7 @@ IP-CIDR,20.203.144.245/32,no-resolve
 IP-CIDR,20.203.145.145/32,no-resolve
 IP-CIDR,20.203.145.225/32,no-resolve
 IP-CIDR,20.203.241.30/32,no-resolve
+IP-CIDR,20.205.234.64/32,no-resolve
 IP-CIDR,20.206.69.234/32,no-resolve
 IP-CIDR,20.206.90.17/32,no-resolve
 IP-CIDR,20.207.196.19/32,no-resolve
@@ -441,6 +469,7 @@ IP-CIDR,20.211.204.106/32,no-resolve
 IP-CIDR,20.211.207.196/32,no-resolve
 IP-CIDR,20.211.232.159/32,no-resolve
 IP-CIDR,20.211.28.213/32,no-resolve
+IP-CIDR,20.212.25.108/32,no-resolve
 IP-CIDR,20.212.83.76/32,no-resolve
 IP-CIDR,20.213.73.163/32,no-resolve
 IP-CIDR,20.214.186.125/32,no-resolve
@@ -455,6 +484,7 @@ IP-CIDR,20.215.51.56/32,no-resolve
 IP-CIDR,20.215.69.18/32,no-resolve
 IP-CIDR,20.218.37.123/32,no-resolve
 IP-CIDR,20.218.43.103/32,no-resolve
+IP-CIDR,20.219.1.167/32,no-resolve
 IP-CIDR,20.219.100.169/32,no-resolve
 IP-CIDR,20.219.102.5/32,no-resolve
 IP-CIDR,20.219.109.3/32,no-resolve
@@ -509,6 +539,7 @@ IP-CIDR,20.41.97.13/32,no-resolve
 IP-CIDR,20.42.209.232/32,no-resolve
 IP-CIDR,20.42.216.2/32,no-resolve
 IP-CIDR,20.45.59.121/32,no-resolve
+IP-CIDR,20.46.180.229/32,no-resolve
 IP-CIDR,20.55.129.73/32,no-resolve
 IP-CIDR,20.58.186.41/32,no-resolve
 IP-CIDR,20.59.119.195/32,no-resolve
@@ -593,6 +624,7 @@ IP-CIDR,51.116.89.99/32,no-resolve
 IP-CIDR,51.4.112.173/32,no-resolve
 IP-CIDR,51.57.68.153/32,no-resolve
 IP-CIDR,51.57.79.182/32,no-resolve
+IP-CIDR,52.140.124.30/32,no-resolve
 IP-CIDR,52.141.0.43/32,no-resolve
 IP-CIDR,52.141.4.85/32,no-resolve
 IP-CIDR,52.143.181.161/32,no-resolve
@@ -607,6 +639,7 @@ IP-CIDR,52.230.89.145/32,no-resolve
 IP-CIDR,52.233.253.172/32,no-resolve
 IP-CIDR,52.234.45.139/32,no-resolve
 IP-CIDR,52.236.51.132/32,no-resolve
+IP-CIDR,52.237.113.253/32,no-resolve
 IP-CIDR,52.241.6.99/32,no-resolve
 IP-CIDR,52.243.62.231/32,no-resolve
 IP-CIDR,52.247.69.68/32,no-resolve
