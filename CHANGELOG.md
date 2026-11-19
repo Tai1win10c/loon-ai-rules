@@ -1,5 +1,12 @@
 # 变更记录
 
+## 2026-11-19 — 对照 Net.Coffee 补充 Claude 和 OpenAI
+
+- 新增 11 条 OpenAI 精确主机规则，覆盖社区列出的 CDN、资产、Arkose、遥测、Crixet 及部分历史 Azure 实时推送主机。
+- 新增 3 条 Claude 精确社区候选和 3 条 Anthropic 官方入站 CIDR。可选的 Anthropic 共享表为 12 条。
+- ChatGPT 语音更新至官方 2026-11-16 快照，新增 9 个 IPv4 目的地址，语音规则共 411 条。
+- 主表 660 条。证据、共享影响和待验证用途见 SOURCES.md。
+
 ## 2026-11-19 — 补充 Antigravity、Cursor 和 GitHub Copilot 主机
 
 - 新增 14 条精确域名规则，覆盖 Antigravity 的日志、API 和更新主机，Cursor 的 Agent 文件同步和远程组件，以及 GitHub Copilot 的实时 WebSocket。
